@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jarditou - Contact</title>
+  </head>
+  <body>
+    <header>
+      <img src="src/img/jarditou_logo.jpg" width="540px" />
+      <p>La qualité depuis 70 ans.</p>
+      <nav>
+        <ul type="disc">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="tableau.html">Tableau</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <img src="src/img/promotion.jpg" width="1890px" />
+    </header>
+
+    <!------------------------>
+    <!-- Section principale -->
+    <section>
+      <!-- Titre de la section -->
+      <div>
+        <h1>Contact</h1>
+        <hr />
+      </div>
+      <!-- Contenue de l'article -->
+      <section>
+        <!-------------------------------------------------------------------------------------------->
+        <!-- Formulaire qui envoie ces résultats sur le site après "action=" en mode POST (pas GET) -->
+        <form action="http://bienvu.net/script.php" method="POST">
+          <!---------------------------------------------------->
+          <!-- fieldset est le carré comprenant le formulaire -->
+          <!-- celui la est le premier carré de formulaire    -->
+          <fieldset>
+            <!-- legend/titre de mon carré -->
+            <legend>Vos coordonnées</legend>
+            <!-- label for suivi de l'info recherché/qui sera envoyé -->
+            <label for="nom">Votre nom* :</label>
+            <!-- chaque input sert à remplir (de différente façon défini par le type -->
+            <!-- de l'input) le label avec le même nom pour pouvoir être envoyé vers -->
+            <!-- l'endroit souhaité                                                  -->
+            <input
+              type="text"
+              name="nom"
+              id="nom"
+              required
+              title="Entrez votre nom."
+            />
+            <br />
+            <label for="prénom">Votre prénom* :</label>
+            <input
+              type="text"
+              name="prénom"
+              id="prénom"
+              required
+              title="Entrez votre prénom."
+            />
+            <br />
+            <br />
+            <label for="sexe">Sexe* :</label>
+            <input
+              type="radio"
+              name="sexe"
+              value="Féminin"
+              required
+              title="Veuillez cocher votre sexe."
+            />
+            Féminin
+            <input
+              type="radio"
+              name="sexe"
+              value="Masculin"
+              required
+              title="Veuillez cocher votre sexe."
+            />
+            Masculin
+            <br />
+            <br />
+            <label for="date">Date de naissance* :</label>
+            <input
+              type="date"
+              name="date"
+              id="date"
+              required
+              title="Entrez votre date de naissance"
+            />
+            <br />
+            <label for="CP">Code postal* :</label>
+            <input
+              type="number"
+              name="CP"
+              id="CP"
+              required
+              title="Entrez votre code postal."
+            />
+            <br />
+            <label for="adresse">Adresse :</label>
+            <input
+              type="text"
+              name="adresse"
+              id="adresse"
+              title="Entrez votre adresse actuel."
+            />
+            <br />
+            <label for="email">Email* :</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              title="Entrez votre email."
+              placeholder="dave.loper@afpa.fr"
+            />
+            <br />
+          </fieldset>
+          <!--  Fin du Fieldset 1  -->
+          <!------------------------->
+          <!-- Début du Fieldset 2 -->
+          <fieldset>
+            <legend>Votre demande</legend>
+            <label for="sujet">Sujet* :</label>
+            <select id="sujet" required>
+              <option value="" selected>Veuillez séléctionner un sujet</option>
+              <option value="commandes">Mes commandes</option>
+              <option value="produit">Question sur un produit</option>
+              <option value="réclamation">Réclamation</option>
+              <option value="autres">Autres</option>
+            </select>
+            <br />
+            <label for="question">Votre question* :</label>
+            <textarea
+              name="question"
+              rows="2"
+              cols="25"
+              required
+              title="Posez votre question ici."
+            ></textarea>
+          </fieldset>
+          <!--  Fin du Fieldset 2  -->
+          <!------------------------->
+          <br />
+          <label for="agree"></label>
+          <input type="checkbox" name="agree" id="agree" required />
+          * J'accepte le traitement informatique de ce formulaire
+          <br />
+          <br />
+          <!-- "submit" pour envoyer et "reset" pour réinitialiser -->
+          <input type="submit" value="Envoyer" />
+          <input type="reset" value="Annuler" />
+        </form>
+        <!--  Fin du formulaire  -->
+      </section>
+      <hr />
+    </section>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="">Mention légales</a></li>
+          <li><a href="">Horaires</a></li>
+          <li><a href="">Plan du site</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

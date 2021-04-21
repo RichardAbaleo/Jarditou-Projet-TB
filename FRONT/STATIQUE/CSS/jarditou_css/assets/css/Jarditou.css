@@ -1,0 +1,125 @@
+html {
+  font-size: 100%;
+}
+a {
+  color: white;
+}
+h1 {
+  font-size: 3.3rem;
+}
+h2 {
+  font-size: 2.3rem;
+}
+p {
+  font-size: 1.8rem;
+}
+li {
+  font-size: 1.8rem;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+form {
+  font-size: 2rem;
+}
+table {
+  font-size: 1.5rem;
+  width: 100%;
+}
+.menu {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  background-color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: content;
+}
+#haut {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0px;
+}
+#logo {
+  width: 50vw;
+  height: 15vw;
+}
+#slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.3rem;
+  width: 50%;
+}
+#promo {
+  width: 100%;
+  margin-bottom: 0%;
+}
+#principal {
+  width: 100%;
+  margin-right: 0px;
+  margin-top: 0%;
+}
+#colonne {
+  display: none;
+  background-color: grey;
+}
+#global {
+  width: screen;
+}
+#photos {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  li {
+    font-size: 1rem;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  #central {
+    display: flex;
+    flex-direction: row;
+  }
+  #principal {
+    width: 70%;
+  }
+  #colonne {
+    display: flex;
+    width: 30%;
+  }
+  #slogan {
+    font-size: 2.4rem;
+  }
+  #logo {
+    width: 30vw;
+    height: 9vw;
+  }
+  form {
+    font-size: 1rem;
+  }
+  table {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
+  }
+  #photos {
+    width: 200px;
+  }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="jarditou_css/assets/css/Jarditou.css" />
+    <title>Jarditou - Contact</title>
+  </head>
+  <body>
+    <div id="global">
+      <header>
+        <div id="haut">
+          <img id="logo" src="src/img/jarditou_logo.jpg" />
+          <p id="slogan">Tout le jardin</p>
+        </div>
+        <nav>
+          <ul class="menu" type="disc">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="tableau.html">Tableau</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <img id="promo" src="src/img/promotion.jpg" />
+      </header>
+      <div id="central">
+        <section id="principal">
+          <form action="http://bienvu.net/script.php" method="POST">
+            <fieldset>
+              <legend>Vos coordonnées</legend>
+              <label for="nom">Votre nom* :</label>
+              <input
+                type="text"
+                name="nom"
+                id="nom"
+                required
+                title="Entrez votre nom."
+              />
+              <br />
+              <label for="prénom">Votre prénom* :</label>
+              <input
+                type="text"
+                name="prénom"
+                id="prénom"
+                required
+                title="Entrez votre prénom."
+              />
+              <br />
+              <br />
+              <label for="sexe">Sexe* :</label>
+              <input
+                type="radio"
+                name="sexe"
+                value="Féminin"
+                required
+                title="Veuillez cocher votre sexe."
+              />
+              Féminin
+              <input
+                type="radio"
+                name="sexe"
+                value="Masculin"
+                required
+                title="Veuillez cocher votre sexe."
+              />
+              Masculin
+              <br />
+              <br />
+              <label for="date">Date de naissance* :</label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                required
+                title="Entrez votre date de naissance"
+              />
+              <br />
+              <label for="CP">Code postal* :</label>
+              <input
+                type="number"
+                name="CP"
+                id="CP"
+                required
+                title="Entrez votre code postal."
+              />
+              <br />
+              <label for="adresse">Adresse :</label>
+              <input
+                type="text"
+                name="adresse"
+                id="adresse"
+                title="Entrez votre adresse actuel."
+              />
+              <br />
+              <label for="email">Email* :</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                title="Entrez votre email."
+                placeholder="dave.loper@afpa.fr"
+              />
+              <br />
+            </fieldset>
+            <fieldset>
+              <legend>Votre demande</legend>
+              <label for="sujet">Sujet* :</label>
+              <select id="sujet" required>
+                <option value="" selected>Veuillez séléctionner un sujet</option>
+                <option value="commandes">Mes commandes</option>
+                <option value="produit">Question sur un produit</option>
+                <option value="réclamation">Réclamation</option>
+                <option value="autres">Autres</option>
+              </select>
+              <br />
+              <label for="question">Votre question* :</label>
+              <textarea
+                name="question"
+                rows="2"
+                cols="25"
+                required
+                title="Posez votre question ici."
+              ></textarea>
+            </fieldset>
+            <br />
+            <label for="agree"></label>
+            <input type="checkbox" name="agree" id="agree" required />
+            * J'accepte le traitement informatique de ce formulaire
+            <br />
+            <br />
+            <input type="submit" value="Envoyer" />
+            <input type="reset" value="Annuler" />
+          </form>
+        </section>
+        <hr />
+      </section>
+      <section id="colonne">[COLONNE DROITE]</section>
+      </div>
+        <footer>
+          <nav>
+            <ul class="menu">
+              <li><a href="">Mention légales</a></li>
+              <li><a href="">Horaires</a></li>
+              <li><a href="">Plan du site</a></li>
+            </ul>
+          </nav>
+        </footer>
+      </div>
+    </body>
+  </html>

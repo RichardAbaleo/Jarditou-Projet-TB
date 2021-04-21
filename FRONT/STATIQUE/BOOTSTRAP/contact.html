@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- CSS pour bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Jarditou - Contact</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <!-- Première ligne -->
+        <div class="d-none d-lg-block">
+          <div class="row">
+            <div class="col-12 col-lg-2">
+              <img src="src/img/jarditou_logo.jpg" class="img-fluid" />
+            </div>
+            <div class="col-lg-6"></div>
+            <div class="col-12 col-lg-4">
+              <h1 class="text-center">Tout le jardin</h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deuxième ligne -->
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light">
+              <p class="my-auto pr-3"><b>Jarditou.com</b></p>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#menu"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collaspe navbar-collapse" id="menu">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="tableau.html">Tableau</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <div class="" style="display: inline">
+                      <input
+                        class="mr-2 py-1 pb-2 rounded"
+                        type="text"
+                        placeholder="Votre Promotion"
+                      />
+                      <button type="button" class="btn btn-outline-success">
+                        Rechercher
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Troisième ligne -->
+        <div class="row">
+          <div class="col-12">
+            <img src="src/img/promotion.jpg" class="img-fluid" />
+          </div>
+        </div>
+      </header>
+
+      <!-- Quatrième ligne -->
+      <div class="row">
+        <div class="col-12">
+          <p>* Ces zones sont obligatoires</p>
+          <section>
+            <form
+              class="form-group"
+              action="http://bienvu.net/script.php"
+              method="POST"
+            >
+              <fieldset>
+                <legend><h1>Vos coordonnées</h1></legend>
+                <label for="nom">Votre nom* :</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="nom"
+                  id="nom"
+                  required
+                  title="Entrez votre nom."
+                />
+                <br />
+                <label for="prénom">Votre prénom* :</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="prénom"
+                  id="prénom"
+                  required
+                  title="Entrez votre prénom."
+                />
+                <br />
+                <br />
+                <label for="sexe">Sexe* :</label>
+                <input
+                  type="radio"
+                  name="sexe"
+                  value="Féminin"
+                  required
+                  title="Veuillez cocher votre sexe."
+                />
+                Féminin
+                <input
+                  type="radio"
+                  name="sexe"
+                  value="Masculin"
+                  required
+                  title="Veuillez cocher votre sexe."
+                />
+                Masculin
+                <input
+                  type="radio"
+                  name="sexe"
+                  value="Neutre"
+                  required
+                  title="Veuillez cocher votre sexe."
+                />
+                Neutre
+                <br />
+                <br />
+                <label for="date">Date de naissance* :</label>
+                <input
+                  class="form-control"
+                  type="date"
+                  name="date"
+                  id="date"
+                  required
+                  title="Entrez votre date de naissance"
+                />
+                <br />
+                <label for="CP">Code postal* :</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  name="CP"
+                  id="CP"
+                  required
+                  title="Entrez votre code postal."
+                />
+                <br />
+                <label for="adresse">Adresse :</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="adresse"
+                  id="adresse"
+                  title="Entrez votre adresse actuel."
+                />
+                <br />
+                <label for="email">Email* :</label>
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  title="Entrez votre email."
+                  placeholder="dave.loper@afpa.fr"
+                />
+                <br />
+              </fieldset>
+              <fieldset>
+                <legend><h1>Votre demande</h1></legend>
+                <label for="sujet">Sujet* :</label>
+                <select id="sujet" class="form-control" required>
+                  <option value="" selected>
+                    Veuillez séléctionner un sujet
+                  </option>
+                  <option value="commandes">Mes commandes</option>
+                  <option value="produit">Question sur un produit</option>
+                  <option value="réclamation">Réclamation</option>
+                  <option value="autres">Autres</option>
+                </select>
+                <br />
+                <label for="question">Votre question* :</label>
+                <textarea
+                  class="form-control"
+                  name="question"
+                  rows="2"
+                  cols="25"
+                  required
+                  title="Posez votre question ici."
+                ></textarea>
+              </fieldset>
+              <br />
+              <label for="agree"></label>
+              <input type="checkbox" name="agree" id="agree" required />
+              * J'accepte le traitement informatique de ce formulaire
+              <br />
+              <br />
+              <button type="submit" class="btn btn-dark" value="Envoyer">
+                Envoyer
+              </button>
+              <button type="reset" class="btn btn-dark" value="Annuler">
+                Annuler
+              </button>
+            </form>
+          </section>
+        </div>
+      </div>
+      <footer>
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand bg-dark navbar-dark">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="">Mention légales</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">Horaires</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">Plan du site</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Script pour CSS bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
