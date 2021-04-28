@@ -89,90 +89,99 @@
           <p>* Ces zones sont obligatoires</p>
           <section>
             <form
+              id="form"
+              name="form"
+              method="POST"
               class="form-group"
               action="http://bienvu.net/script.php"
-              method="POST"
+              onsubmit=" return (envoi());"
             >
+              <!--  action="http://bienvu.net/script.php" method="GET"-->
               <fieldset>
                 <legend><h1>Vos coordonnées</h1></legend>
-                <label for="nom">Votre nom* :</label>
+                <label for="nom">Nom*</label>
                 <input
                   class="form-control"
                   type="text"
                   name="nom"
                   id="nom"
-                  required
                   title="Entrez votre nom."
+                  required
                 />
-                <br />
-                <label for="prénom">Votre prénom* :</label>
+                <span id="missNom"></span><br />
+                <label for="prenom">Prénom*</label>
                 <input
                   class="form-control"
                   type="text"
-                  name="prénom"
-                  id="prénom"
-                  required
+                  name="prenom"
+                  id="prenom"
                   title="Entrez votre prénom."
+                  required
                 />
-                <br />
-                <br />
-                <label for="sexe">Sexe* :</label>
+                <span id="missPrenom"></span><br /><br />
+                <label for="sexe">Sexe*</label>
                 <input
                   type="radio"
                   name="sexe"
+                  id="femme"
                   value="Féminin"
-                  required
                   title="Veuillez cocher votre sexe."
+                  required
                 />
                 Féminin
                 <input
                   type="radio"
                   name="sexe"
+                  id="homme"
                   value="Masculin"
-                  required
                   title="Veuillez cocher votre sexe."
+                  required
                 />
                 Masculin
                 <input
                   type="radio"
                   name="sexe"
+                  id="neutre"
                   value="Neutre"
-                  required
                   title="Veuillez cocher votre sexe."
+                  required
                 />
                 Neutre
-                <br />
-                <br />
-                <label for="date">Date de naissance* :</label>
+                <span id="missSexe"></span><br /><br />
+                <label for="date">Date de naissance*</label>
                 <input
                   class="form-control"
                   type="date"
                   name="date"
                   id="date"
                   required
-                  title="Entrez votre date de naissance"
                 />
-                <br />
-                <label for="CP">Code postal* :</label>
+                <span id="missDate"></span><br />
+                <label for="CP">Code postal*</label>
                 <input
                   class="form-control"
                   type="number"
                   name="CP"
                   id="CP"
                   required
-                  title="Entrez votre code postal."
-                />
-                <br />
-                <label for="adresse">Adresse :</label>
+                /><span id="missCP"></span><br />
+                <label for="adresse">Adresse</label>
                 <input
                   class="form-control"
                   type="text"
                   name="adresse"
                   id="adresse"
-                  title="Entrez votre adresse actuel."
                 />
                 <br />
-                <label for="email">Email* :</label>
+                <label for="ville">Ville</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="ville"
+                  id="ville"
+                />
+                <br />
+                <label for="email">Email*</label>
                 <input
                   class="form-control"
                   type="email"
@@ -182,41 +191,59 @@
                   title="Entrez votre email."
                   placeholder="dave.loper@afpa.fr"
                 />
+                <span id="missEmail"></span><br />
                 <br />
               </fieldset>
               <fieldset>
                 <legend><h1>Votre demande</h1></legend>
-                <label for="sujet">Sujet* :</label>
+                <label for="sujet">Sujet*</label>
                 <select id="sujet" class="form-control" required>
-                  <option value="" selected>
+                  <option value="" disabled selected>
                     Veuillez séléctionner un sujet
                   </option>
-                  <option value="commandes">Mes commandes</option>
-                  <option value="produit">Question sur un produit</option>
-                  <option value="réclamation">Réclamation</option>
-                  <option value="autres">Autres</option>
+                  <option value="Mes commandes">Mes commandes</option>
+                  <option value="Question sur un produit">
+                    Question sur un produit
+                  </option>
+                  <option value="Réclamation">Réclamation</option>
+                  <option value="Autres">Autres</option>
                 </select>
+                <span id="missSujet"></span>
                 <br />
-                <label for="question">Votre question* :</label>
+                <label for="question">Votre question*</label>
                 <textarea
                   class="form-control"
                   name="question"
+                  id="question"
                   rows="2"
                   cols="25"
                   required
                   title="Posez votre question ici."
                 ></textarea>
+                <span id="missQuestion"></span><br />
               </fieldset>
               <br />
               <label for="agree"></label>
-              <input type="checkbox" name="agree" id="agree" required />
+              <input type="checkbox" name="agree" id="agree" />
               * J'accepte le traitement informatique de ce formulaire
               <br />
+              <span id="missAgree"></span>
               <br />
-              <button type="submit" class="btn btn-dark" value="Envoyer">
+              <br />
+              <button
+                type="submit"
+                class="btn btn-dark"
+                value="Envoyer"
+                id="bouton_envoi"
+              >
                 Envoyer
               </button>
-              <button type="reset" class="btn btn-dark" value="Annuler">
+              <button
+                type="reset"
+                id="reset"
+                class="btn btn-dark"
+                value="Annuler"
+              >
                 Annuler
               </button>
             </form>
