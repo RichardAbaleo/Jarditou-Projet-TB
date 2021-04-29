@@ -1,3 +1,4 @@
+/* Variables */
 var nom = document.getElementById("nom").value;
 var prenom = document.getElementById("prenom").value;
 var sex = "";
@@ -10,7 +11,10 @@ var sujet = document.getElementById("sujet").value;
 var question = document.getElementById("question").value;
 var agree = document.getElementById("agree").checked;
 var formulaire = new Array();
+var confirmationEnvoi = true;
 
+/* Variables qui détermine les <span> dans //
+// le HTML pour afficher le message        */
 var missNom = document.getElementById("missNom");
 var missPrenom = document.getElementById("missPrenom");
 var missSexe = document.getElementById("missSexe");
@@ -21,16 +25,19 @@ var missSujet = document.getElementById("missSujet");
 var missQuestion = document.getElementById("missQuestion");
 var missAgree = document.getElementById("missAgree");
 
+/* Regex pour controler la saisie par l'utilisateur */
 var nomValid = /^[A-Z][A-Za-z\é\è\ê\-]+$/;
 var prenomValid = /^[A-Z][A-Za-z\é\è\ê\-]+$/;
 var emailValid = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
+/* Pour donner aux bouttons HTML une valeur //
+// d'action sur le javascript               */
 var formValid = document.getElementById("bouton_envoi");
 formValid.addEventListener("click", validation);
-
 var reset = document.getElementById("reset");
 reset.addEventListener("click", reeinitialisation);
 
+/* pour réinitialiser les <span> */
 function reeinitialisation() {
   missNom.textContent = "";
   missPrenom.textContent = "";
@@ -43,8 +50,8 @@ function reeinitialisation() {
   missAgree.textContent = "";
 }
 
-var confirmationEnvoi = true;
-
+/* la fonction principal qui vas lancer toutes les //
+// autres fonctions                                */
 function validation() {
   confirmationEnvoi = true;
   prenomVerif();
@@ -62,6 +69,7 @@ function validation() {
   envoi();
 }
 
+/* Liste de toutes les fonctions apparaisant ci-dessus */
 function prenomVerif() {
   prenom = document.getElementById("prenom").value;
   if (prenom == "") {
@@ -171,14 +179,14 @@ function cPVerif() {
 function adresseVerif() {
   adres = document.getElementById("adresse").value;
   if (adres == "") {
-    adres = "Adresse non renseignée";
+    adres = "Non renseignée";
   }
 }
 
 function villeVerif() {
   ville = document.getElementById("ville").value;
   if (ville == "") {
-    ville = "Ville non renseignée";
+    ville = "Non renseignée";
   }
 }
 
@@ -270,4 +278,3 @@ function envoi() {
   }
   return true;
 }
-/*  */
