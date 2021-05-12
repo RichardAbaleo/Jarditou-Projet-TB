@@ -11,7 +11,7 @@ while (age < 100) {
   if (age < 20) {
     jeune = jeune + 1;
   } else {
-    if (age > 40) {
+    if (age < 40) {
       moyen = moyen + 1;
     } else {
       vieux = vieux + 1;
