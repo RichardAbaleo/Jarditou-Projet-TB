@@ -28,7 +28,8 @@ var missAgree = document.getElementById("missAgree");
 /* Regex pour controler la saisie par l'utilisateur */
 var nomValid = /^[A-Z][A-Za-z\é\è\ê\-]+$/;
 var prenomValid = /^[A-Z][A-Za-z\é\è\ê\-]+$/;
-var emailValid = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+var emailValid =
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 /* Pour donner aux bouttons HTML une valeur //
 // d'action sur le javascript               */
@@ -130,17 +131,14 @@ function sexeVerif() {
 
 function dateVerif() {
   dateNaissance = document.getElementById("date").value;
-  dateNaissance = dateNaissance.split("-");
-  var annee = dateNaissance[0] * 31557600000;
-  var mois = dateNaissance[1] * 2629800000;
-  var jour = dateNaissance[2] * 86400000;
-  dateNaissance = annee + mois + jour - 1970 * 31557600000;
-  if (isNaN(dateNaissance)) {
+  var today = Date.now();
+  var dateEntree = new Date(dateNaissance);
+  if (!isNaN(dateNaissance)) {
     missDateNaissance.textContent = "Rentrez une date";
     missDateNaissance.style.color = "red";
     confirmationEnvoi = false;
   } else {
-    if (dateNaissance > Date.now()) {
+    if (dateEntree > today) {
       missDateNaissance.textContent = "Rentrez une date valide";
       missDateNaissance.style.color = "orange";
       confirmationEnvoi = false;
