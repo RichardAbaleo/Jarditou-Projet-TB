@@ -1,7 +1,8 @@
 <?php
  session_start();
- if (isset($_SESSION['username'])){  
-} else {
+ if ($_SESSION['actif'] == TRUE){  
+} 
+else {
   header("Location: identification.php");
   exit();
 }

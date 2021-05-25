@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])){  
+if ($_SESSION['actif'] == TRUE){  
   header("Location: index_admin.php");
   exit();
 }
