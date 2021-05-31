@@ -1,9 +1,14 @@
 <?php
-session_start();
-if (@$_SESSION['actif'] == TRUE){  
-  header("Location: index_admin.php");
-  exit();
-}
+ session_start();
+$_SESSION['erreur_verif'] = "";
+$_SESSION['pro_ref'] = "";
+$_SESSION['pro_libelle'] = "";
+$_SESSION['pro_description'] = "";
+$_SESSION['pro_prix'] = "";
+$_SESSION['pro_stock'] = "";
+$_SESSION['pro_couleur'] = "";
+$_SESSION['Oui'] = "";
+$_SESSION['Non'] = "";   
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,10 +25,10 @@ if (@$_SESSION['actif'] == TRUE){
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <title>Jarditou - Details</title>
+    <title>Jarditou - Tableau</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container-lg">
       <header>
         <!-- Première ligne -->
         <div class="d-none d-lg-block">
@@ -54,13 +59,13 @@ if (@$_SESSION['actif'] == TRUE){
               <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="index.php">Accueil</a>
+                    <a class="nav-link" href="">Accueil</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="tableau.php">Tableau</a>
+                    <a class="nav-link" href="index.php">Tableau</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a class="nav-link" href="">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -78,26 +83,49 @@ if (@$_SESSION['actif'] == TRUE){
 
       <!-- Quatrième ligne -->
       <div class="row">
-      <div class="col-lg-4"></div>
-        <div class="col-12 col-lg-4 text-center">
-        </br></br>
-          <form
-              class="form-group"
-              action="verif_session_script.php"
-              method="POST"
-            >
-          <label for="username">Username :</label>
-          <input class="form-control" type="text" name="username" value=""></input>
-          </br>
-          <label for="password">Password :</label>
-          <input class="form-control" type="password" name="password" value=""></input>
-          </br>
+        <div class="col-12 table-responsive">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td class='table-active'><b>Photo</b></td>
+                <td class='table-active'><b>ID</b></td>
+                <td class='table-active'><b>Référence</b></td>
+                <td class='table-active'><b>Libellé</b></td>
+                <td class='table-active'><b>Prix</b></td>
+                <td class='table-active'><b>Stock</b></td>
+                <td class='table-active'><b>Couleur</b></td>
+                <td class='table-active'><b>Ajout</b></td>
+                <td class='table-active'><b>Modif</b></td>
+                <td class='table-active'><b>Bloqué</b></td>
+              </tr>
+              <?php 
+               require "connexion_bdd.php";
+               $reponsebis = $db->query('SELECT * FROM produits');
+               while ($donnees = $reponsebis->fetch()) {
+               $bloque = $donnees['pro_bloque'];
+               if ($bloque == "0"){
+               $bloque = "<p class='text-center text-body bg-danger rounded-pill'>BLOQUE</p>";
+               } else {
+               $bloque = "";
+               }
+               $affichage = "<tr><td class='table-warning' style='border-color:black;'>"."<img src='src/img/".$donnees['pro_id'].".jpg' class='img-fluid' width='100px' />"."</td>".
+               "<td class='align-middle table-secondary' style='border-color:black;'>".$donnees['pro_id']."</td>".
+               "<td class='align-middle table-secondary' style='border-color:black;'>".$donnees['pro_ref']."</td>".
+               "<td class='align-middle table-warning' style='border-color:black;'><a href='details.php?pro_id=".$donnees['pro_id']."'>".($donnees['pro_libelle'])."</a></td>".
+               "<td class='align-middle table-secondary' style='border-color:black;'>".$donnees['pro_prix']."</td>".
+               "<td class='align-middle table-secondary' style='border-color:black;'>".$donnees['pro_stock']."</td>".
+               "<td class='align-middle table-secondary' style='border-color:black;'>".$donnees['pro_couleur']."</td>".
+               "<td class='align-middle table-secondary' style='border-color:black;'>".$donnees['pro_d_ajout']."</td>".
+               "<td class='align-middle table-secondary' style='border-color:black;'>".$donnees['pro_d_modif']."</td>".
+               "<td class='align-middle table-secondary' style='border-color:black;'>".($bloque)."</td></tr>";  
+               echo $affichage;
+               }
+              ?>
+            </tbody>
+          </table>
+          <a type="button" class="ml-3 btn btn-lg btn-info active " href="add_form.php">Ajouter un produit</a>
           </br></br>
-          <button class="btn btn-lg btn-success active" type="submit">Se connecter</button>
-          </form>
-          </br>
         </div>
-      <div class="col-lg-4"></div>  
       </div>
 
       <!-- Cinquième ligne-->
